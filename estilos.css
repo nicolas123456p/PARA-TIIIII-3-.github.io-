@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif; /* TODO sigue igual */
+  background: linear-gradient(135deg, #ec252b, #fad0c4);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TARJETA */
+.card {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  padding: 35px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  width: 340px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.4);
+}
+
+/* SOLO EL TITULO CAMBIA */
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  letter-spacing: 2px;
+}
+
+/* FOTO */
+.foto-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.foto {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 4px solid white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: 0.4s;
+}
+
+.foto:hover {
+  transform: scale(1.05);
+}
+
+/* SOBRE */
+.sobre {
+  position: relative;
+  width: 200px;
+  height: 130px;
+  background: #ff6b81;
+  margin: 25px auto;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.tapa {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ff4757;
+  clip-path: polygon(0 0, 100% 0, 50% 60%);
+  transition: 0.5s;
+}
+
+.carta {
+  position: absolute;
+  background: white;
+  color: #333;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: 0.5s;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.sobre.abierto .tapa {
+  transform: rotateX(180deg);
+}
+
+.sobre.abierto .carta {
+  transform: translateY(0);
+}
+
+/* BOTONES */
+.botones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.spotify { background: #1DB954; }
+.youtube { background: #FF0000; }
+
+/* BOTON SORPRESA */
+.sorpresa {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background: #ff3f6c;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sorpresa:hover {
+  transform: scale(1.1);
+}
+
+.oculto {
+  display: none;
+  margin-top: 15px;
+  animation: aparecer 1s ease;
+}
+
+@keyframes aparecer {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* CORAZONES */
+.corazones span {
+  position: absolute;
+  color: rgba(255,255,255,0.7);
+  animation: flotar linear infinite;
+}
+
+@keyframes flotar {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
