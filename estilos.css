@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #db2d33, #fad0c4);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TARJETA */
+.card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  width: 320px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.4);
+  animation: aparecer 1.5s ease;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.mensaje {
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+/* BOTONES */
+.botones {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  padding: 12px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.spotify {
+  background: #1DB954;
+}
+
+.youtube {
+  background: #FF0000;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* FIRMA */
+.firma {
+  margin-top: 25px;
+  font-style: italic;
+}
+
+/* CORAZONES */
+.corazones span {
+  position: absolute;
+  color: rgba(255,255,255,0.6);
+  font-size: 20px;
+  animation: flotar linear infinite;
+}
+
+@keyframes flotar {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-10vh);
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
